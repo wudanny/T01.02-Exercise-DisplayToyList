@@ -33,23 +33,18 @@ public class MainActivity extends AppCompatActivity {
         mToysListTextView = (TextView) findViewById(R.id.tv_toy_names);
 
         // TODO (4) Use the static ToyBox.getToyNames method and store the names in a String array
-        String[] toyNames;
-        toyNames = ToyBox.getToyNames();
+        String[] toyNames = ToyBox.getToyNames();
 
 
         // TODO (5) Loop through each toy and append the name to the TextView (add \n for spacing)
-
-       for (int index = 0; index < toyNames.length; index++){
-
-        mToysListTextView.append(toyNames[index]+"\n\n\n");}
-
-
-
-                        //Or we could do
-                        // for (String toyName : toyNames){
-                        //mToysListTextView.append(toyName+"n\n\n");
-                       // }
-
+       
+        // This is preferred way of looping through a list.
+        for (String toyName : toyNames){
+             mToysListTextView.append(toyName+"\n");
         }
+        
+//        for (int index = 0; index < toyNames.length; index++){
+//         mToysListTextView.append(toyNames[index]+"\n");}
+//         }
     }
 
